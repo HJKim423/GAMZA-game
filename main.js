@@ -44,7 +44,7 @@ img1.src = "img/cactus.png";
 
 class Cactus{
     constructor(){
-        this.x = 500;
+        this.x = 700;
         this.y =178;
         this.width = 40;
         this.height = 70;
@@ -75,7 +75,7 @@ function moveCactus(){
 
     //score표시
     score.innerHTML=`Score : ${Math.round(timer/2)}`;
-    ment.innerHTML=`Your score is ${Math.round(timer/2)}`;
+    ment.innerHTML=`${Math.round(timer/2)}점이야!`;
 
     console.log(timer);
     cactusArr.forEach((a,i,o) =>{
@@ -86,8 +86,8 @@ function moveCactus(){
         if(timer < 300) a.x -= 5;
         else if(timer < 600) a.x -= 6;
         else if(timer <900) a.x -= 8;
-        else if(timer < 1500) a.x -= 17;
-        else if(timer <2000) a.x -= 25;
+        else if(timer < 1500) a.x -= 15;
+        else if(timer <2000) a.x -= 20;
         else if(timer <2200) a.x -= 5;
         else if(timer <3000) a.x -= 30;
         else if(timer <3300) a.x -= 15;
@@ -102,15 +102,15 @@ function moveCactus(){
     
     //점프기능
     if(jumping === true){
-        dino.y -= 7;
+        dino.y -= 8;
         jumpTimer++;
     }
     if(jumping ===false){
         if(dino.y < 200)
-        dino.y +=7;
+        dino.y +=8;
 
     }
-    if(jumpTimer > 20){
+    if(jumpTimer > 15){
         jumping = false;
         jumpTimer=0;
     }
@@ -121,7 +121,7 @@ moveCactus();
 
 //충돌판정
 function isCollision(dino, cactus){
-    let  Xdiff = cactus.x - (dino.x + dino.width)+10 ;
+    let  Xdiff = cactus.x - (dino.x + dino.width)+20 ;
     let  Ydiff = cactus.y - (dino.y + dino.height)+40;
     if(Xdiff<0 && Ydiff<0){
         ctx.clearRect(0,0,canvas.width, canvas.height);
