@@ -30,8 +30,8 @@ img2.src = "img/dino.png";
 let dino = {
     x : 10,
     y : 200,
-    width : 100,
-    height : 60,
+    width : 70,
+    height : 50,
     draw(){
         ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -45,7 +45,7 @@ img1.src = "img/cactus.png";
 class Cactus{
     constructor(){
         this.x = 500;
-        this.y =185;
+        this.y =178;
         this.width = 40;
         this.height = 70;
     }
@@ -84,9 +84,9 @@ function moveCactus(){
             o.splice(i,1);
         }
         if(timer < 300) a.x -= 5;
-        else if(timer < 600) a.x -= 7;
-        else if(timer <900) a.x -= 10;
-        else if(timer < 1500) a.x -= 20;
+        else if(timer < 600) a.x -= 6;
+        else if(timer <900) a.x -= 8;
+        else if(timer < 1500) a.x -= 17;
         else if(timer <2000) a.x -= 25;
         else if(timer <2200) a.x -= 5;
         else if(timer <3000) a.x -= 30;
