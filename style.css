@@ -1,5 +1,5 @@
 body {
-  margin: 100px 200px 200px 200px;
+  margin: 100px 200px 200px 10px;
   overflow: hidden;
 }
 
@@ -8,9 +8,9 @@ body {
 }
 
 .game-over {
-  font-size: 30px;
+  font-size: 20px;
   margin: auto;
-  transform: translate(30%, 100%);
+  transform: translate(10%, 100%);
 }
 
 .replay {
@@ -21,6 +21,6 @@ body {
   border-radius: 100px;
   transition: all 0.2s;
   position: absolute;
-  margin-left: 50px;
+  margin-left: 10px;
   margin-top: 10px;
 }
