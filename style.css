@@ -3,10 +3,6 @@ body {
   overflow: hidden;
 }
 
-canvas {
-  border: 3px solid balck;
-}
-
 .game-over--hide {
   display: none;
 }

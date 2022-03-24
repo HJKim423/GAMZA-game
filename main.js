@@ -8,49 +8,48 @@ let replay = document.querySelector(".replay");
 canvas.width = window.innerWidth -100;
 canvas.height = window.innerHeight -100;
 
-let background = new Image();
-background.src = "img/background.png";
+// let background = new Image();
+// background.src = "img/background.png";
 
-class Back{
-    constructor(){
-        this.x=0;
-        this.y=140;
-        this.width = 500;
-        this.height= 200;
-    }
-    draw(){
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(background, this.x, this.y, this.width, this.height);
-    }
-}
+// class Back{
+//     constructor(){
+//         this.x=0;
+//         this.y=140;
+//         this.width = 500;
+//         this.height= 200;
+//     }
+//     draw(){
+//         ctx.fillRect(this.x, this.y, this.width, this.height);
+//         ctx.drawImage(background, this.x, this.y, this.width, this.height);
+//     }
+// }
 
 let img2 = new Image();
-img2.src = "img/dino.jpg";
+img2.src = "img/dino.png";
 
 let dino = {
     x : 10,
     y : 200,
-    width : 50,
-    height : 50,
+    width : 100,
+    height : 60,
     draw(){
-        ctx.fillStyle = "green";
+        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(img2, this.x, this.y, this.width, this.height);
     }
 
 }
 let img1 = new Image();
-img1.src = "img/cactus.jpg";
+img1.src = "img/cactus.png";
 
 class Cactus{
     constructor(){
         this.x = 500;
-        this.y =200;
-        this.width = 50;
-        this.height = 50;
+        this.y =185;
+        this.width = 40;
+        this.height = 70;
     }
     draw(){
-        ctx.fillStyle = "red";
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(img1, this.x, this.y, this.width, this.height);
     }
@@ -84,9 +83,9 @@ function moveCactus(){
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 500) a.x -= 5;
-        else if(timer < 700) a.x -= 7;
-        else if(timer <1000) a.x -= 10;
+        if(timer < 300) a.x -= 5;
+        else if(timer < 600) a.x -= 7;
+        else if(timer <900) a.x -= 10;
         else if(timer < 1500) a.x -= 20;
         else if(timer <2000) a.x -= 25;
         else if(timer <2200) a.x -= 5;
@@ -122,8 +121,8 @@ moveCactus();
 
 //충돌판정
 function isCollision(dino, cactus){
-    let  Xdiff = cactus.x - (dino.x + dino.width) +20;
-    let  Ydiff = cactus.y - (dino.y + dino.height)+20;
+    let  Xdiff = cactus.x - (dino.x + dino.width)+10 ;
+    let  Ydiff = cactus.y - (dino.y + dino.height)+40;
     if(Xdiff<0 && Ydiff<0){
         ctx.clearRect(0,0,canvas.width, canvas.height);
         cancelAnimationFrame(animation);
