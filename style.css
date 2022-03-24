@@ -1,0 +1,30 @@
+body {
+  margin: 100px 200px 200px 200px;
+  overflow: hidden;
+}
+
+canvas {
+  border: 3px solid balck;
+}
+
+.game-over--hide {
+  display: none;
+}
+
+.game-over {
+  font-size: 30px;
+  margin: auto;
+  transform: translate(30%, 100%);
+}
+
+.replay {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 10px;
+}
