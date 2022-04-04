@@ -8,21 +8,6 @@ let replay = document.querySelector(".replay");
 canvas.width = window.innerWidth -100;
 canvas.height = window.innerHeight -100;
 
-// let background = new Image();
-// background.src = "img/background.png";
-
-// class Back{
-//     constructor(){
-//         this.x=0;
-//         this.y=140;
-//         this.width = 500;
-//         this.height= 200;
-//     }
-//     draw(){
-//         ctx.fillRect(this.x, this.y, this.width, this.height);
-//         ctx.drawImage(background, this.x, this.y, this.width, this.height);
-//     }
-// }
 
 let img2 = new Image();
 img2.src = "img/dino.png";
@@ -95,11 +80,11 @@ function moveCactus(){
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 200) a.x -= 9;
-        else if(timer < 400) a.x -= 10;
-        else if(timer <600) a.x -= 12;
-        else if(timer < 800) a.x -= 15;
-        else if(timer <900) a.x -= 18;
+        if(timer < 200) a.x -= 18;
+        else if(timer < 400) a.x -= 20;
+        else if(timer <600) a.x -= 24;
+        else if(timer < 800) a.x -= 30;
+        else if(timer <900) a.x -= 36;
         else if(timer <1200) a.x -= 21;
         else if(timer <1500) a.x -= 25;
         else if(timer <3300) a.x -= 15;
