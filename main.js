@@ -70,7 +70,7 @@ function moveCactus(){
     else if(score <= 700){
         ment.innerHTML=`${score}점이야! <img src='img/700점.png' width = '60' height = '60'>`;
     }
-    else if(score >= 1000){
+    else if(score > 700){
         ment.innerHTML=`${score}점이야..... <img src='img/1000점.png' width = '60' height = '60'>`;
     }
     
@@ -80,13 +80,13 @@ function moveCactus(){
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 200) a.x -= 12;
-        else if(timer < 400) a.x -= 14;
-        else if(timer <600) a.x -= 16;
-        else if(timer < 800) a.x -= 18;
-        else if(timer <900) a.x -= 20;
-        else if(timer <1200) a.x -= 22;
-        else if(timer <1500) a.x -= 24;
+        if(timer < 200) a.x -= 11;
+        else if(timer < 400) a.x -= 13;
+        else if(timer <600) a.x -= 15;
+        else if(timer < 800) a.x -= 17;
+        else if(timer <900) a.x -= 19;
+        else if(timer <1200) a.x -= 21;
+        else if(timer <1500) a.x -= 23;
         else if(timer <3300) a.x -= 26;
         else if(timer <4000) a.x -= 30;
 
@@ -99,15 +99,15 @@ function moveCactus(){
     
     //점프기능
     if(jumping === true){
-        dino.y -= 15;
+        dino.y -= 16;
         jumpTimer++;
     }
     if(jumping ===false){
         if(dino.y < 200)
-        dino.y +=15;
+        dino.y +=16;
 
     }
-    if(jumpTimer > 10){
+    if(jumpTimer > 9){
         jumping = false;
         jumpTimer=0;
     }
