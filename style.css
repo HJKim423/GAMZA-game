@@ -1,6 +1,12 @@
 body {
   margin: 100px 200px 200px 10px;
   overflow: hidden;
+  background-color: #cddafd;
+}
+
+.score {
+  font-weight: 700;
+  color: #343a40;
 }
 
 .game-over--hide {

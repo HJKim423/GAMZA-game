@@ -28,12 +28,12 @@ let img2 = new Image();
 img2.src = "img/dino.png";
 
 let dino = {
-    x : 10,
+    x : 30,
     y : 200,
-    width : 70,
-    height : 50,
+    width : 100,
+    height : 70,
     draw(){
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+        ctx.fillStyle = "rgba(255, 255, 255, 0)";
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.drawImage(img2, this.x, this.y, this.width, this.height);
     }
@@ -45,9 +45,9 @@ img1.src = "img/cactus.png";
 class Cactus{
     constructor(){
         this.x = 700;
-        this.y =178;
-        this.width = 40;
-        this.height = 70;
+        this.y =175;
+        this.width = 50;
+        this.height = 90;
     }
     draw(){
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -74,21 +74,20 @@ function moveCactus(){
     }
 
     //score표시
-    score.innerHTML=`Score : ${Math.round(timer/2)}`;
+    score.innerHTML=`SCORE : ${Math.round(timer/2)}`;
     ment.innerHTML=`${Math.round(timer/2)}점이야!`;
 
-    console.log(timer);
     cactusArr.forEach((a,i,o) =>{
         //지나간 cactus는 배열에서 제거
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 300) a.x -= 5;
-        else if(timer < 600) a.x -= 6;
-        else if(timer <900) a.x -= 8;
-        else if(timer < 1500) a.x -= 15;
-        else if(timer <2000) a.x -= 20;
-        else if(timer <2200) a.x -= 5;
+        if(timer < 300) a.x -= 6;
+        else if(timer < 600) a.x -= 7;
+        else if(timer <900) a.x -= 9;
+        else if(timer < 1500) a.x -= 12;
+        else if(timer <2000) a.x -= 16;
+        else if(timer <2200) a.x -= 25;
         else if(timer <3000) a.x -= 30;
         else if(timer <3300) a.x -= 15;
         else if(timer <4000) a.x -= 40;
@@ -102,19 +101,20 @@ function moveCactus(){
     
     //점프기능
     if(jumping === true){
-        dino.y -= 8;
+        dino.y -= 9;
         jumpTimer++;
     }
     if(jumping ===false){
         if(dino.y < 200)
-        dino.y +=8;
+        dino.y +=9;
 
     }
-    if(jumpTimer > 15){
+    if(jumpTimer > 17){
         jumping = false;
         jumpTimer=0;
     }
-    
+
+
     dino.draw();
 }
 moveCactus();
@@ -122,7 +122,7 @@ moveCactus();
 //충돌판정
 function isCollision(dino, cactus){
     let  Xdiff = cactus.x - (dino.x + dino.width)+20 ;
-    let  Ydiff = cactus.y - (dino.y + dino.height)+40;
+    let  Ydiff = cactus.y - (dino.y + dino.height)+55;
     if(Xdiff<0 && Ydiff<0){
         ctx.clearRect(0,0,canvas.width, canvas.height);
         cancelAnimationFrame(animation);
@@ -151,6 +151,10 @@ document.addEventListener("keydown", (e)=>{
 })
 
 canvas.addEventListener("click", (e)=>{
+    if(timer > 10 && dino.y < 200){
+        e.preventDefault();
+    }
+    else  
     jumping = true;
 })
 
