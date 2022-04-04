@@ -1,6 +1,6 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
-let score = document.querySelector(".score");
+let scoreTXT = document.querySelector(".score");
 let gameOver = document.querySelector(".game-over");
 let ment = document.querySelector(".over-ment");
 let replay = document.querySelector(".replay");
@@ -74,21 +74,34 @@ function moveCactus(){
     }
 
     //score표시
-    score.innerHTML=`SCORE : ${Math.round(timer/2)}`;
-    ment.innerHTML=`${Math.round(timer/2)}점이야!`;
+    let score = Math.round(timer/2);
+    scoreTXT.innerHTML=`SCORE : ${score}`;
+    if(score <= 200){
+        ment.innerHTML=`${score}점이야.. <img src='img/200점.png' width = '60' height = '60'>`;
+    }
+    else if(score <= 400){
+        ment.innerHTML=`${score}점이야 <img src='img/400점.png' width = '60' height = '60'>`;
+    }
+    else if(score <= 700){
+        ment.innerHTML=`${score}점이야! <img src='img/700점.png' width = '60' height = '60'>`;
+    }
+    else if(score >= 1000){
+        ment.innerHTML=`${score}점이야..... <img src='img/1000점.png' width = '60' height = '60'>`;
+    }
+    
 
     cactusArr.forEach((a,i,o) =>{
         //지나간 cactus는 배열에서 제거
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 300) a.x -= 9;
-        else if(timer < 600) a.x -= 10;
-        else if(timer <900) a.x -= 12;
-        else if(timer < 1500) a.x -= 15;
-        else if(timer <2000) a.x -= 19;
-        else if(timer <2200) a.x -= 25;
-        else if(timer <3000) a.x -= 30;
+        if(timer < 200) a.x -= 9;
+        else if(timer < 400) a.x -= 10;
+        else if(timer <600) a.x -= 12;
+        else if(timer < 800) a.x -= 15;
+        else if(timer <900) a.x -= 18;
+        else if(timer <1200) a.x -= 21;
+        else if(timer <1500) a.x -= 25;
         else if(timer <3300) a.x -= 15;
         else if(timer <4000) a.x -= 40;
 

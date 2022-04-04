@@ -6,7 +6,7 @@ body {
 
 .score {
   font-weight: 700;
-  color: #343a40;
+  color: #6c757d;
 }
 
 .game-over--hide {
@@ -17,6 +17,11 @@ body {
   font-size: 20px;
   margin: auto;
   transform: translate(10%, 100%);
+}
+
+.over-ment {
+  font-weight: 700;
+  color: #495057;
 }
 
 .replay {
