@@ -30,8 +30,8 @@ img2.src = "img/dino.png";
 let dino = {
     x : 30,
     y : 200,
-    width : 100,
-    height : 70,
+    width : 80,
+    height : 50,
     draw(){
         ctx.fillStyle = "rgba(255, 255, 255, 0)";
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -45,9 +45,9 @@ img1.src = "img/cactus.png";
 class Cactus{
     constructor(){
         this.x = 700;
-        this.y =175;
-        this.width = 50;
-        this.height = 90;
+        this.y =170;
+        this.width = 45;
+        this.height = 80;
     }
     draw(){
         ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -121,8 +121,8 @@ moveCactus();
 
 //충돌판정
 function isCollision(dino, cactus){
-    let  Xdiff = cactus.x - (dino.x + dino.width)+20 ;
-    let  Ydiff = cactus.y - (dino.y + dino.height)+55;
+    let  Xdiff = cactus.x - (dino.x + dino.width)+15 ;
+    let  Ydiff = cactus.y - (dino.y + dino.height)+50;
     if(Xdiff<0 && Ydiff<0){
         ctx.clearRect(0,0,canvas.width, canvas.height);
         cancelAnimationFrame(animation);
