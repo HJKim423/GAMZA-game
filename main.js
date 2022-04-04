@@ -82,11 +82,11 @@ function moveCactus(){
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 300) a.x -= 6;
-        else if(timer < 600) a.x -= 7;
-        else if(timer <900) a.x -= 9;
-        else if(timer < 1500) a.x -= 12;
-        else if(timer <2000) a.x -= 16;
+        if(timer < 300) a.x -= 9;
+        else if(timer < 600) a.x -= 10;
+        else if(timer <900) a.x -= 12;
+        else if(timer < 1500) a.x -= 15;
+        else if(timer <2000) a.x -= 19;
         else if(timer <2200) a.x -= 25;
         else if(timer <3000) a.x -= 30;
         else if(timer <3300) a.x -= 15;
@@ -101,15 +101,15 @@ function moveCactus(){
     
     //점프기능
     if(jumping === true){
-        dino.y -= 9;
+        dino.y -= 13;
         jumpTimer++;
     }
     if(jumping ===false){
         if(dino.y < 200)
-        dino.y +=9;
+        dino.y +=11;
 
     }
-    if(jumpTimer > 17){
+    if(jumpTimer > 13){
         jumping = false;
         jumpTimer=0;
     }
