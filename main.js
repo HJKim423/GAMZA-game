@@ -81,16 +81,16 @@ function moveCactus(){
             o.splice(i,1);
         }
         if(timer < 200) a.x -= 12;
-        else if(timer < 400) a.x -= 15;
-        else if(timer <600) a.x -= 17;
-        else if(timer < 800) a.x -= 20;
-        else if(timer <900) a.x -= 23;
-        else if(timer <1200) a.x -= 25;
-        else if(timer <1500) a.x -= 27;
-        else if(timer <3300) a.x -= 30;
-        else if(timer <4000) a.x -= 40;
+        else if(timer < 400) a.x -= 14;
+        else if(timer <600) a.x -= 16;
+        else if(timer < 800) a.x -= 18;
+        else if(timer <900) a.x -= 20;
+        else if(timer <1200) a.x -= 22;
+        else if(timer <1500) a.x -= 24;
+        else if(timer <3300) a.x -= 26;
+        else if(timer <4000) a.x -= 30;
 
-        else a.x -= 50;
+        else a.x -= 40;
 
         isCollision(dino, a);
 
@@ -119,7 +119,7 @@ moveCactus();
 
 //충돌판정
 function isCollision(dino, cactus){
-    let  Xdiff = cactus.x - (dino.x + dino.width)+15 ;
+    let  Xdiff = cactus.x - (dino.x + dino.width)+20 ;
     let  Ydiff = cactus.y - (dino.y + dino.height)+50;
     if(Xdiff<0 && Ydiff<0){
         ctx.clearRect(0,0,canvas.width, canvas.height);
