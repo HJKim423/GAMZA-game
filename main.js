@@ -80,13 +80,13 @@ function moveCactus(){
         if(a.x < 0){
             o.splice(i,1);
         }
-        if(timer < 200) a.x -= 18;
-        else if(timer < 400) a.x -= 20;
-        else if(timer <600) a.x -= 24;
-        else if(timer < 800) a.x -= 30;
-        else if(timer <900) a.x -= 36;
-        else if(timer <1200) a.x -= 21;
-        else if(timer <1500) a.x -= 25;
+        if(timer < 200) a.x -= 12;
+        else if(timer < 400) a.x -= 13;
+        else if(timer <600) a.x -= 15;
+        else if(timer < 800) a.x -= 18;
+        else if(timer <900) a.x -= 21;
+        else if(timer <1200) a.x -= 24;
+        else if(timer <1500) a.x -= 28;
         else if(timer <3300) a.x -= 15;
         else if(timer <4000) a.x -= 40;
 
@@ -99,15 +99,15 @@ function moveCactus(){
     
     //점프기능
     if(jumping === true){
-        dino.y -= 13;
+        dino.y -= 15;
         jumpTimer++;
     }
     if(jumping ===false){
         if(dino.y < 200)
-        dino.y +=11;
+        dino.y +=15;
 
     }
-    if(jumpTimer > 13){
+    if(jumpTimer > 10){
         jumping = false;
         jumpTimer=0;
     }
